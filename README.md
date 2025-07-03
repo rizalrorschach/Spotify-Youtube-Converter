@@ -111,6 +111,39 @@ A powerful TypeScript tool that automatically converts Spotify playlists to YouT
    GOOGLE_REDIRECT_URI=http://127.0.0.1:3000/callback
    ```
 
+#### 2.5 Add Test Users (Required for External OAuth Apps)
+
+Since you're using an **External** OAuth application, you need to add test users before you can use the OAuth flow:
+
+1. **Go to OAuth Consent Screen**:
+   - In Google Cloud Console, go to **"APIs & Services"** → **"OAuth consent screen"**
+
+2. **Add Test Users**:
+   - Scroll down to the **"Test users"** section
+   - Click **"Add Users"**
+   - Add your Google account email address
+   - You can add up to 100 test users
+   - Click **"Save"**
+
+3. **Why This is Required**:
+   - External OAuth apps are in "Testing" mode by default
+   - Only test users can use the OAuth flow
+   - This prevents unauthorized access to your app
+   - You can publish the app later if needed
+
+4. **Important Notes**:
+   - ✅ **Add your own email** as a test user
+   - ✅ **Add any other users** who will use this tool
+   - ⚠️ **Without test users**, OAuth will fail with "access_denied"
+   - 🔄 **Test users can be added/removed** anytime
+
+**Alternative: Publish Your App (Advanced)**
+If you want anyone to use your app without being added as a test user:
+1. Go to **"OAuth consent screen"**
+2. Click **"Publish App"**
+3. Complete Google's verification process
+4. **Note**: This requires additional verification and is not recommended for personal use
+
 ### Step 3: Final Environment Configuration
 
 Your complete `.env` file should look like this:

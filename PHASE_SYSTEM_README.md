@@ -100,6 +100,38 @@ If the automatic flow doesn't work, you can get the code manually:
    npm run create-playlist 4OA5qo67rHBa7KY34NuHPf YOUR_AUTH_CODE
    ```
 
+#### **Important: Test Users Required**
+
+Since you're using an **External** OAuth application, you need to add test users before OAuth will work:
+
+1. **Go to OAuth Consent Screen**:
+   - In Google Cloud Console, go to **"APIs & Services"** → **"OAuth consent screen"**
+
+2. **Add Test Users**:
+   - Scroll down to the **"Test users"** section
+   - Click **"Add Users"**
+   - Add your Google account email address
+   - You can add up to 100 test users
+   - Click **"Save"**
+
+3. **Why This is Required**:
+   - External OAuth apps are in "Testing" mode by default
+   - Only test users can use the OAuth flow
+   - This prevents unauthorized access to your app
+   - You can publish the app later if needed
+
+4. **Common OAuth Errors**:
+   - ❌ **"access_denied"**: You're not added as a test user
+   - ❌ **"invalid_client"**: OAuth credentials are incorrect
+   - ❌ **"redirect_uri_mismatch"**: Redirect URI doesn't match
+
+**Alternative: Publish Your App (Advanced)**
+If you want anyone to use your app without being added as a test user:
+1. Go to **"OAuth consent screen"**
+2. Click **"Publish App"**
+3. Complete Google's verification process
+4. **Note**: This requires additional verification and is not recommended for personal use
+
 #### **Authorization Code Format**
 
 Authorization codes look like this:
