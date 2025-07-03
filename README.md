@@ -23,7 +23,7 @@ A powerful TypeScript tool that automatically converts Spotify playlists to YouT
 
 1. **Clone or download this project:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/rizalrorschach/Spotify-Youtube-Converter
    cd spotify-to-youtube-converter
    ```
 
